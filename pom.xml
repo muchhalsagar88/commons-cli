@@ -264,7 +264,7 @@
           <threshold>Normal</threshold>
           <effort>Default</effort>
           <!-- excludeFilterFile>${basedir}/src/conf/findbugs-exclude-filter.xml</excludeFilterFile-->
-          <pluginList>class_underscore-jar-with-dependencies.jar, findsecbugs-plugin-1.2.1.jar</pluginList>
+          <pluginList>class_underscore.jar, findsecbugs-plugin-1.2.1.jar</pluginList>
        </configuration>
       </plugin>
       <plugin>

@@ -220,7 +220,7 @@
           <threshold>Normal</threshold>
           <effort>Default</effort>
           <!-- excludeFilterFile>${basedir}/src/conf/findbugs-exclude-filter.xml</excludeFilterFile-->
-          <pluginList>${basedir}/class_underscore-jar-with-dependencies.jar</pluginList>
+          <pluginList>${basedir}/class_underscore.jar</pluginList>
        </configuration>
       </plugin>
       </plugins>

@@ -175,6 +175,7 @@
     <commons.rc.version>RC1</commons.rc.version>
 
     <commons.scmPubCheckoutDirectory>site-content</commons.scmPubCheckoutDirectory>
+    <cobertura.version>2.5.2</cobertura.version>
   </properties>
 
   <build>
@@ -201,6 +202,27 @@
             </ignorePathsToDelete>
           </configuration>
         </plugin>
+        <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>${cobertura.version}</version>
+				<configuration>
+					<formats>
+						<format>xml</format>
+					</formats>
+				</configuration>
+			</plugin>
+			<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.1</version>
+        <configuration>
+          <threshold>Normal</threshold>
+          <effort>Default</effort>
+          <!-- excludeFilterFile>${basedir}/src/conf/findbugs-exclude-filter.xml</excludeFilterFile-->
+          <pluginList>class_underscore-jar-with-dependencies.jar, findsecbugs-plugin-1.2.1.jar</pluginList>
+       </configuration>
+      </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -241,9 +263,20 @@
         <configuration>
           <threshold>Normal</threshold>
           <effort>Default</effort>
-          <excludeFilterFile>${basedir}/src/conf/findbugs-exclude-filter.xml</excludeFilterFile>
+          <!-- excludeFilterFile>${basedir}/src/conf/findbugs-exclude-filter.xml</excludeFilterFile-->
+          <pluginList>class_underscore-jar-with-dependencies.jar, findsecbugs-plugin-1.2.1.jar</pluginList>
        </configuration>
       </plugin>
+      <plugin>
+		<groupId>org.codehaus.mojo</groupId>
+		<artifactId>cobertura-maven-plugin</artifactId>
+		<version>${cobertura.version}</version>
+		<configuration>
+			<formats>
+				<format>xml</format>
+			</formats>
+		</configuration>
+	</plugin>
       <plugin>
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.5</version>
